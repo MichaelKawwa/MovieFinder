@@ -9,9 +9,14 @@ import SwiftUI
 
 @main
 struct MovieFinderApp: App {
+    
+    let movieRepo = MoviesRepository(cache: TrendingMoviesCache())
+    let apiKey = Config.apiKey
+    
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            HomeView(movieRepo: movieRepo)
         }
     }
 }
